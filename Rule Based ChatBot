@@ -1,0 +1,34 @@
+def chatbot_response(user_input):
+    user_input = user_input.lower().strip()
+
+    if any(word in user_input for word in ["hi", "hello", "hey"]):
+        return "Hello! Nice to meet you"
+
+    elif "how are you" in user_input:
+        return "I'm just a simple chatbot, but I'm doing great! How about you?"
+
+    elif "your name" in user_input or "who are you" in user_input:
+        return "I am RuleBot 2.0, your keyword-based assistant"
+
+    elif "weather" in user_input:
+        return "I can’t check live weather, but it’s always sunny inside my code"
+
+    elif "help" in user_input:
+        return "Sure! You can ask me about my name, greetings, or just chat casually."
+
+    elif "bye" in user_input or "goodbye" in user_input:
+        return "Goodbye! Talk to you soon"
+
+    else:
+        return "Hmm... I didn’t get that. Can you try rephrasing?"
+
+def chat():
+    print("RuleBot 2.0: Hello! Type 'bye' to exit.")
+    while True:
+        user_input = input("You: ")
+        response = chatbot_response(user_input)
+        print("RuleBot 2.0:", response)
+        if "bye" in user_input.lower():
+            break
+if __name__ == "__main__":
+    chat()
